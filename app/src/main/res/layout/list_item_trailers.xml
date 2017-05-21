@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/trailers_item_selector"
+    android:paddingTop="@dimen/tv_margin">
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/tv_margin"
+        android:background="@drawable/play_button" />
+
+    <TextView
+        android:id="@+id/tv_trailer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_play"
+        android:textSize="20sp"
+        tools:text="John Wick 2 Trailer" />
+
+    <View
+        android:id="@+id/trailer_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height1dp"
+        android:layout_below="@id/iv_play"
+        android:layout_marginTop="@dimen/tv_margin"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>
