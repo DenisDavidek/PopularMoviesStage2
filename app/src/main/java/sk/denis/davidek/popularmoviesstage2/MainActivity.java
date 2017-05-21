@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             if (MOVIES_CURRENT_FILTER.equals(MOVIES_FAVORITES)) {
                 getMoviesCursorLocalData();
             } else {
-                showErrorMessage();
+                showNoFavoriteMoviesMessage();
             }
 
         }
@@ -172,13 +172,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
             case R.id.action_show_favorite_movies:
                 Toast.makeText(getApplicationContext(), getString(R.string.showing_favorite_movies), Toast.LENGTH_LONG).show();
-                if (NetworkUtils.checkInternetConnection(this)) {
+              //  if (NetworkUtils.checkInternetConnection(this)) {
                     moviesRecyclerView.setAdapter(null);
                     preferencesKey = getString(R.string.pref_current_movies_filter);
                     getMoviesCursorLocalData();
                     GlobalUtils.setCurrentFilterSetting(sharedPreferences, preferencesKey, MOVIES_FAVORITES);
-                } else
-                    showErrorMessage();
+              //  } else
+                   // showNoFavoriteMoviesMessage();
                 break;
         }
 
@@ -202,6 +202,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         moviesRecyclerView.setVisibility(View.INVISIBLE);
         errorInternetConnectionTextView.setVisibility(View.VISIBLE);
+        if (noFavoriteMoviesTextView.getVisibility() == View.VISIBLE) {
+            noFavoriteMoviesTextView.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void showMovieDataView() {
@@ -214,6 +217,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         moviesRecyclerView.setVisibility(View.INVISIBLE);
         noFavoriteMoviesTextView.setVisibility(View.VISIBLE);
+        if (errorInternetConnectionTextView.getVisibility() == View.VISIBLE) {
+            errorInternetConnectionTextView.setVisibility(View.INVISIBLE);
+        }
     }
 
 
