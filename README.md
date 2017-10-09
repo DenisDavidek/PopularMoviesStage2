@@ -1,14 +1,16 @@
 # PopularMoviesStage2
 Simple movie listing Android app allowing users to discover movies. This is  a continuation of [this project](https://github.com/DenisDavidek/PopularMoviesStage1) and it is also a Project 2 of Udacity's Android Developer Nanodegree.
 
-
-**Features:**
+## Features:
 - Discover top rated and popular movies
 - Basic UI optimizations for phones and tablets
 - UI designed using Material Design
 - Watch movie trailers
 - Read movie reviews from other users
 - Mark movies as your favorites and learn about them offline
+
+## Used Libraries inside this project
+- [Picasso](https://github.com/square/picasso)
 
 # Screenshots
 
@@ -23,7 +25,6 @@ Clone or download this repository and follow requirements and API KEY sections t
  - Java 7
  - Latest version of Android Studio, Android Build Tools and Gradle
  
-
 ## API KEY
 
 This app uses themoviedb.org API to get a releavant movie information and posters. 
@@ -34,3 +35,7 @@ Create gradle.properties file(if it doesn't exist) and put your API key inside t
 ```
 API_KEY="xYz123"
 ```
+
+# Author
+
+[Denis Dávidek](https://github.com/DenisDavidek)
